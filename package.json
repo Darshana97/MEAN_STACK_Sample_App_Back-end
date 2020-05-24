@@ -5,17 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "babel-watch server.js"
+    "start": "nodemon --exec babel-node src/server"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-watch": "^7.0.0"
+    "@babel/core": "7.9.0",
+    "@babel/node": "7.8.7",
+    "@babel/preset-env": "7.9.0",
+    "@babel/plugin-proposal-class-properties": "7.8.3",
+    "nodemon": "2.0.2"
   },
   "dependencies": {
+    "@babel/core": "^7.9.6",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.9.15"
