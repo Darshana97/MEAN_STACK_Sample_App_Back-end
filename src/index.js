@@ -9,7 +9,7 @@ const router = express.Router();
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect("",{ useNewUrlParser: true });
+mongoose.connect("", { useNewUrlParser: true });
 const connection = mongoose.connection;
 
 connection.once("open", () => {
