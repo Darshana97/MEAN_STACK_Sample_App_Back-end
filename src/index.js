@@ -53,7 +53,7 @@ router.route("/issues/add").post((req, res) => {
     });
 });
 
-router.route("issues/update/:id").post((req, res) => {
+router.route("/issues/update/:id").post((req, res) => {
   Issue.findById(req.params.id, (err, issue) => {
     if (!issue) {
       return next(new Error("Could not load document"));
