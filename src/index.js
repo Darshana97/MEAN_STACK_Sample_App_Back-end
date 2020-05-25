@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 
 mongoose.connect("mongodb://localhost:27017/Sample_app", {
   useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 const connection = mongoose.connection;
 
@@ -53,7 +54,7 @@ router.route("/issues/add").post((req, res) => {
 });
 
 router.route("issues/update/:id").post((req, res) => {
-  Issue.findById(rq.params.id, (err, issue) => {
+  Issue.findById(req.params.id, (err, issue) => {
     if (!issue) {
       return next(new Error("Could not load document"));
     } else {
