@@ -11,7 +11,9 @@ const router = express.Router();
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect("", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost:27017/Sample_app", {
+  useNewUrlParser: true,
+});
 const connection = mongoose.connection;
 
 connection.once("open", () => {
